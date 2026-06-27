@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aaryan Shakya | AI & Deep Learning Engineer</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Devicon CDN for Dev Logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Style Sheet Override -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: "#0b0f17"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-sky-500/20 selection:text-sky-300">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 w-full z-50 border-b border-slate-800/50 nav-blur">
+        <div class="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
+            <a href="#" class="flex items-center gap-2 group">
+                <span class="material-symbols-outlined text-sky-400 group-hover:rotate-12 transition-transform duration-300">terminal</span>
+                <span class="font-mono text-sm font-bold tracking-tight text-slate-100 group-hover:text-sky-400 transition-colors">AARYAN.SHAKYA</span>
+            </a>
+            
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="font-mono text-xs text-slate-400 hover:text-sky-400 transition-colors tracking-wide" href="#projects">PROJECTS</a>
+                <a class="font-mono text-xs text-slate-400 hover:text-sky-400 transition-colors tracking-wide" href="#skills">SKILLS</a>
+                <a class="font-mono text-xs text-slate-400 hover:text-sky-400 transition-colors tracking-wide" href="#research">RESEARCH</a>
+                <a class="font-mono text-xs text-slate-400 hover:text-sky-400 transition-colors tracking-wide" href="#contact">CONTACT</a>
+                <a class="border border-sky-500/30 bg-sky-500/5 px-4 py-1.5 rounded text-xs font-mono font-medium text-sky-400 hover:bg-sky-500/10 hover:border-sky-500/50 transition-all" href="CV.pdf" target="_blank">RESUME</a>
+            </nav>
+            
+            <!-- Hamburger menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-400 hover:text-sky-400 transition-colors" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div id="mobile-menu-drawer" class="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-md transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex justify-between items-center p-6 border-b border-slate-800/50">
+            <span class="font-mono text-sm font-bold text-slate-300">MENU</span>
+            <button id="mobile-menu-close-btn" class="text-slate-400 hover:text-sky-400 transition-colors" aria-label="Close Menu">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center justify-center gap-8 h-[calc(100vh-80px)]">
+            <a class="mobile-menu-link text-lg font-mono text-slate-300 hover:text-sky-400 transition-colors" href="#projects">PROJECTS</a>
+            <a class="mobile-menu-link text-lg font-mono text-slate-300 hover:text-sky-400 transition-colors" href="#skills">SKILLS</a>
+            <a class="mobile-menu-link text-lg font-mono text-slate-300 hover:text-sky-400 transition-colors" href="#research">RESEARCH</a>
+            <a class="mobile-menu-link text-lg font-mono text-slate-300 hover:text-sky-400 transition-colors" href="#contact">CONTACT</a>
+            <a class="mobile-menu-link border border-sky-500/30 bg-sky-500/5 px-6 py-2.5 rounded text-sm font-mono font-medium text-sky-400 hover:bg-sky-500/10 transition-all mt-4 w-40 text-center" href="CV.pdf" target="_blank">RESUME</a>
+        </nav>
+    </div>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="min-h-[85vh] flex items-center px-6 max-w-6xl mx-auto py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-900/50 border border-slate-800 rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="font-mono text-[11px] tracking-wide text-slate-300 uppercase">Available for Collaborations</span>
+                    </div>
+                    
+                    <h1 class="font-bold text-3xl sm:text-4xl md:text-[2.75rem] text-slate-100 leading-tight tracking-tight">
+                        Aaryan Shakya
+                    </h1>
+                    
+                    <p class="font-mono text-sm sm:text-base text-sky-400 min-h-[48px]" id="typewriter-text"></p>
+                    
+                    <p class="text-base text-slate-400 leading-relaxed max-w-2xl">
+                        AI Engineer specialized in deep learning architecture, graph neural networks, and custom LLM development. Experienced in training transformer models from scratch, designing multi-agent RAG pipelines, and processing large-scale graph datasets. Proven track record of translating complex ML research into optimized, scalable engineering solutions with a strong focus on clean pipeline design.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a class="bg-sky-500 text-slate-950 font-medium px-6 py-2.5 rounded text-sm hover:bg-sky-400 hover:shadow-[0_0_20px_rgba(56,189,248,0.25)] transition-all flex items-center gap-2 group" href="#projects">
+                            View Projects
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                        <a class="border border-slate-800 text-slate-300 font-medium px-6 py-2.5 rounded text-sm hover:bg-slate-900 hover:text-slate-100 transition-all" href="#contact">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Photo Area -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <!-- Simplified Minimalist Border Highlight Frame -->
+                        <div class="absolute inset-0 border border-slate-800 rounded-lg transform rotate-2"></div>
+                        <div class="absolute inset-0 border border-sky-500/20 rounded-lg transform -rotate-1"></div>
+                        
+                        <!-- Profile Image Container -->
+                        <div class="relative w-full h-full overflow-hidden rounded-lg bg-slate-900 border border-slate-800">
+                            <img alt="Aaryan Shakya" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="Profile.png"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                            
+                            <!-- Minimalist HUD tag -->
+                            <div class="absolute bottom-4 left-4 bg-slate-950/70 backdrop-blur-md px-3 py-1 rounded border border-slate-800">
+                                <p class="font-mono text-[10px] text-sky-400 uppercase tracking-widest">ID: A_SHAKYA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="py-16 px-6 bg-slate-900/30 border-y border-slate-900" id="skills">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-10">
+                    <h2 class="text-2xl md:text-[1.75rem] font-bold text-slate-100 tracking-tight">Technical Skills</h2>
+                    <p class="text-sm text-slate-400 mt-2">Core toolsets, programming platforms, and deep learning frameworks.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4">
+                    <!-- Python -->
+                    <div class="skill-card p-4 rounded-lg flex flex-col items-center justify-center gap-3 text-center group">
+                        <i class="devicon-python-plain text-3xl text-slate-400 group-hover:text-sky-400 transition-colors"></i>
+                        <span class="font-mono text-xs text-slate-300 font-medium">PYTHON</span>
+                    </div>
+                    <!-- PyTorch -->
+                    <div class="skill-card p-4 rounded-lg flex flex-col items-center justify-center gap-3 text-center group">
+                        <i class="devicon-pytorch-plain text-3xl text-slate-400 group-hover:text-orange-500 transition-colors"></i>
+                        <span class="font-mono text-xs text-slate-300 font-medium">PYTORCH</span>
+                    </div>
+                    <!-- TensorFlow -->
+                    <div class="skill-card p-4 rounded-lg flex flex-col items-center justify-center gap-3 text-center group">
+                        <i class="devicon-tensorflow-line text-3xl text-slate-400 group-hover:text-orange-400 transition-colors"></i>
+                        <span class="font-mono text-xs text-slate-300 font-medium">TENSORFLOW</span>
+                    </div>
+                    <!-- Scikit-learn -->
+                    <div class="skill-card p-4 rounded-lg flex flex-col items-center justify-center gap-3 text-center group">
+                        <i class="devicon-scikitlearn-plain text-3xl text-slate-400 group-hover:text-blue-400 transition-colors"></i>
+                        <span class="font-mono text-xs text-slate-300 font-medium">SCIKIT-LEARN</span>
+                    </div>
+                    <!-- Docker -->
+                    <div class="skill-card p-4 rounded-lg flex flex-col items-center justify-center gap-3 text-center group">
+                        <i class="devicon-docker-plain text-3xl text-slate-400 group-hover:text-sky-500 transition-colors"></i>
+                        <span class="font-mono text-xs text-slate-300 font-medium">DOCKER</span>
+                    </div>
+                    <!-- C++ -->
+                    <div class="skill-card p-4 rounded-lg flex flex-col items-center justify-center gap-3 text-center group">
+                        <i class="devicon-cplusplus-plain text-3xl text-slate-400 group-hover:text-blue-500 transition-colors"></i>
+                        <span class="font-mono text-xs text-slate-300 font-medium">C++</span>
+                    </div>
+                    <!-- Git -->
+                    <div class="skill-card p-4 rounded-lg flex flex-col items-center justify-center gap-3 text-center group">
+                        <i class="devicon-git-plain text-3xl text-slate-400 group-hover:text-red-500 transition-colors"></i>
+                        <span class="font-mono text-xs text-slate-300 font-medium">GIT</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="skill-card p-4 rounded-lg flex flex-col items-center justify-center gap-3 text-center group">
+                        <i class="devicon-javascript-plain text-3xl text-slate-400 group-hover:text-yellow-400 transition-colors"></i>
+                        <span class="font-mono text-xs text-slate-300 font-medium">JAVASCRIPT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="py-16 px-6 max-w-6xl mx-auto" id="projects">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                <div>
+                    <h2 class="text-2xl md:text-[1.75rem] font-bold text-slate-100 tracking-tight">Projects</h2>
+                    <p class="text-sm text-slate-400 mt-2">Active implementations and deep learning modules.</p>
+                </div>
+                
+                <!-- Project Filters -->
+                <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 font-mono text-xs">
+                    <button data-filter="all" class="filter-btn px-4 py-1.5 rounded bg-sky-500 text-slate-950 font-medium transition-all shadow-[0_0_15px_rgba(56,189,248,0.25)]">ALL</button>
+                    <button data-filter="nlp" class="filter-btn px-4 py-1.5 rounded bg-slate-800/50 text-slate-400 hover:text-slate-200 transition-all">NLP/LLMs</button>
+                    <button data-filter="gnn" class="filter-btn px-4 py-1.5 rounded bg-slate-800/50 text-slate-400 hover:text-slate-200 transition-all">GNNs/GRAPHS</button>
+                    <button data-filter="cv-multimodal" class="filter-btn px-4 py-1.5 rounded bg-slate-800/50 text-slate-400 hover:text-slate-200 transition-all">CV & MULTIMODAL</button>
+                    <button data-filter="data-eng" class="filter-btn px-4 py-1.5 rounded bg-slate-800/50 text-slate-400 hover:text-slate-200 transition-all">DATA_ENG</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1: Multimodal Nepali Cultural Dance Classification Engine -->
+                <div data-category="cv-multimodal" class="project-card premium-card p-5 rounded-lg flex flex-col gap-4">
+                    <div class="flex justify-end">
+                        <span class="font-mono text-[10px] text-slate-500">ID: P_DANCE_01</span>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-semibold text-slate-100 mb-1">Nepali Cultural Dance Classifier</h3>
+                        <p class="text-xs font-mono text-sky-400 mb-2">Machine Learning Engineer</p>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Engineered a multimodal neural network to classify 20 distinct categories of traditional dance styles. Designed the feature extraction and alignment pipelines to calibrate and synchronize disparate sensory modes into a unified classifier.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">MULTIMODAL</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">COMPUTER VISION</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">PYTORCH</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: LEGIT -->
+                <div data-category="nlp" class="project-card premium-card p-5 rounded-lg flex flex-col gap-4">
+                    <div class="flex justify-end">
+                        <span class="font-mono text-[10px] text-slate-500">ID: P_LEGIT_02</span>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-semibold text-slate-100 mb-2">LEGIT</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Built a 10M-parameter Transformer decoder from scratch on a low-resource ~4M token legal corpus. Achieved 79.4% next-token accuracy, 1.9 perplexity, and a 0.6432 validation loss using mixed-precision training and a warmup-cosine decay schedule.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">TRANSFORMERS</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">BERT</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">PYTORCH</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: OpenAlex Metadata Ingestion -->
+                <div data-category="data-eng" class="project-card premium-card p-5 rounded-lg flex flex-col gap-4">
+                    <div class="flex justify-end">
+                        <span class="font-mono text-[10px] text-slate-500">ID: P_DATA_03</span>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-semibold text-slate-100 mb-1">OpenAlex Metadata Ingestion</h3>
+                        <p class="text-xs font-mono text-sky-400 mb-2">Technical Lead</p>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Architected data pipelines to ingest, clean, and map high-dimensional academic metadata from the OpenAlex dataset. Converted unstructured relational records into optimized, ML-ready graph structures for large-scale downstream network analytics.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">DATA PIPELINES</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">OPENALEX</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">GRAPH DATA</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Enterprise Workflow Automation & Agentic RAG Systems -->
+                <div data-category="nlp" class="project-card premium-card p-5 rounded-lg flex flex-col gap-4">
+                    <div class="flex justify-end">
+                        <span class="font-mono text-[10px] text-slate-500">ID: P_RAG_04</span>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-semibold text-slate-100 mb-2">Agentic RAG & Automation</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Designed event-driven automation workflows linking multi-step enterprise data flows across disparate APIs. Engineered an LLM query transformation pipeline using function calling and structured output parsing to inject dynamic data directly into production n8n automation steps.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">AGENTIC RAG</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">N8N</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">LANGCHAIN</span>
+                    </div>
+                </div>
+
+                <!-- Project 5: Audio Emotion Recognition via Adaptive Graph Neural Networks -->
+                <div data-category="gnn" class="project-card premium-card p-5 rounded-lg flex flex-col gap-4">
+                    <div class="flex justify-end">
+                        <span class="font-mono text-[10px] text-slate-500">ID: P_AUDIO_05</span>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-semibold text-slate-100 mb-2">Audio Emotion Recognition via Adaptive Graph Neural Network</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Reframed speech emotion recognition from traditional 2D spectrograms into a dynamic graph learning execution. Implemented a dyGIN2d (Dynamic Graph Isomorphism Network) architecture to map audio channels as nodes, accurately classifying speech into 7 emotional states.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">AUDIO_DL</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">GNN</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">DYGIN2D</span>
+                    </div>
+                </div>
+
+                <!-- Project 6: EmerG-Net - Discovering Growing Communities in Graphs -->
+                <div data-category="gnn" class="project-card premium-card p-5 rounded-lg flex flex-col gap-4">
+                    <div class="flex justify-end">
+                        <span class="font-mono text-[10px] text-slate-500">ID: P_EMERG_06</span>
+                    </div>
+                    
+                    <div class="flex-grow">
+                        <h3 class="text-lg font-semibold text-slate-100 mb-2">EmerG-Net</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Developed a predictive framework to identify early-stage, high-potential research clusters before citation saturation. Fused 768-dimensional SciBERT contextual embeddings with TransR structural embeddings to process incremental graph updates via a high-performance FastAPI backend.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/60">
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">GNN</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">SCIBERT</span>
+                        <span class="badge-tech px-2.5 py-0.5 rounded font-mono text-[10px] font-medium">FASTAPI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Academic Track -->
+        <section class="py-16 px-6 bg-slate-900/30 border-y border-slate-900" id="research">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Research & Publications -->
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-2xl md:text-[1.75rem] font-bold text-slate-100 tracking-tight">Research & Publications</h2>
+                        <p class="text-sm text-slate-400 mt-1">Research papers, synthesis projects, and publications.</p>
+                    </div>
+                    
+                    <div class="space-y-6 pl-4 border-l border-slate-800">
+                        <!-- Paper 1 -->
+                        <div class="relative space-y-1">
+                            <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-sky-500 rounded-full"></div>
+                            <h4 class="text-base font-semibold text-slate-200">
+                                <a href="https://www.researchgate.net/publication/398518583_Deep_Reinforcement_Learning_to_Master_the_Asymmetric_Strategy_of_Baghchal" target="_blank" class="hover:text-sky-400 hover:underline transition-colors">Deep Reinforcement Learning for Baghchal</a>
+                            </h4>
+                            <p class="font-mono text-[11px] text-emerald-400 uppercase tracking-wider font-semibold">Neural Computing Research</p>
+                            <ul class="list-disc pl-4 text-xs text-slate-400 space-y-1.5 leading-relaxed">
+                                <li>Built and benchmarked four reinforcement learning architectures (MuZero, PPO, DQN, REINFORCE) to play Baghchal, a traditional board game with asymmetric roles between Tiger and Goat pieces.</li>
+                                <li>Designed a custom PyTorch game environment with role-specific reward functions, tuning separate incentive structures for each side.</li>
+                                <li>Under MuZero, the Tiger agent reached an 86% win rate and the Goat agent reached 62%, while PPO came out as the most resource-efficient model for deployment.</li>
+                                <li>Documented emergent multi-agent behaviors in the final writeup, including coordinated pincer movements and tactical sacrifice patterns.</li>
+                            </ul>
+                        </div>
+                        <!-- Paper 2 -->
+                        <div class="relative space-y-1">
+                            <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-slate-700 rounded-full"></div>
+                            <h4 class="text-base font-semibold text-slate-200">
+                                <a href="https://www.researchgate.net/publication/393475413_Nepalese_Currency_Counterfeit_Detection_System" target="_blank" class="hover:text-sky-400 hover:underline transition-colors">Nepalese Currency Counterfeit Detection</a>
+                            </h4>
+                            <p class="font-mono text-[11px] text-emerald-400 uppercase tracking-wider font-semibold">Computer Vision</p>
+                            <ul class="list-disc pl-4 text-xs text-slate-400 space-y-1.5 leading-relaxed">
+                                <li>Co-built a computer vision system to verify the authenticity of NPR 500 and NPR 1000 banknotes across 7 security features.</li>
+                                <li>Compiled and published an open-source dataset of 300+ banknote images, including real-world wear like folding, dirt, and governor-tenure variations.</li>
+                                <li>Benchmarked statistical methods, SVM, and CNN classifiers against each other, then combined ORB-based region extraction with SSIM scoring for the final pipeline.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education & Experience Area -->
+                <div class="space-y-6">
+                    <!-- Education -->
+                    <div>
+                        <div>
+                            <h2 class="text-2xl md:text-[1.75rem] font-bold text-slate-100 tracking-tight">Education</h2>
+                            <p class="text-sm text-slate-400 mt-1">Academic history and specializations.</p>
+                        </div>
+                        
+                        <div class="premium-card p-6 rounded-lg relative overflow-hidden mt-4">
+                            <div class="absolute top-4 right-4 opacity-5">
+                                <span class="material-symbols-outlined text-[100px]">school</span>
+                            </div>
+                            
+                            <h4 class="text-lg font-bold text-sky-400">Kathmandu University</h4>
+                            <p class="text-sm text-slate-300 font-medium mt-1">B.Tech. in Artificial Intelligence</p>
+                            
+                            <ul class="space-y-2 mt-4 text-xs text-slate-400 font-mono">
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-emerald-400 text-base">check_circle</span>
+                                    Expected Graduation: 2027
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-emerald-400 text-base">check_circle</span>
+                                    Focus: Artificial Intelligence & Deep Learning
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Leadership & Experience -->
+                    <div class="pt-4">
+                        <div>
+                            <h2 class="text-2xl md:text-[1.75rem] font-bold text-slate-100 tracking-tight">Leadership & Experience</h2>
+                            <p class="text-sm text-slate-400 mt-1">Bootcamps, mentorships, and academic leadership roles.</p>
+                        </div>
+                        
+                        <div class="space-y-4 mt-4 pl-4 border-l border-slate-800">
+                            <div class="relative space-y-1">
+                                <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                                <h4 class="text-base font-semibold text-slate-200">AI Convergence 2026 (KUAIC)</h4>
+                                <p class="font-mono text-[11px] text-sky-400 uppercase tracking-wider font-semibold">Organizing Committee & Mentor</p>
+                                <p class="text-xs text-slate-400 leading-relaxed">
+                                    Mentored university students through an intensive 3-day data camp covering automated data wrangling with Pandas, statistical visualization with Matplotlib, and introductory ML pipelines.
+                                </p>
+                            </div>
+                            
+                            <div class="relative space-y-1">
+                                <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 bg-slate-700 rounded-full"></div>
+                                <h4 class="text-base font-semibold text-slate-200">KU x Chunjae Education Bootcamp</h4>
+                                <p class="font-mono text-[11px] text-sky-400 uppercase tracking-wider font-semibold">Hackathon Competitor</p>
+                                <p class="text-xs text-slate-400 leading-relaxed">
+                                    Completed a rigorous 10-day applied AI sprint and 3-day hackathon, engineering functional machine learning proofs-of-concept under strict time constraints.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-20 px-6 max-w-4xl mx-auto text-center" id="contact">
+            <h2 class="text-3xl font-extrabold text-slate-100 tracking-tight mb-4">Let's build the future of intelligence together.</h2>
+            <p class="text-slate-400 max-w-xl mx-auto mb-8">
+                I'm open to research collaborations, consulting projects, or engineering roles at the intersection of AI theory and system design.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <!-- Email Uplink -->
+                <a class="group flex items-center gap-3 bg-slate-900 border border-slate-800 hover:border-sky-500/50 hover:shadow-[0_0_20px_rgba(56,189,248,0.15)] px-6 py-3 rounded-full transition-all" href="https://mail.google.com/mail/?view=cm&fs=1&to=shakyaaryan.ai@gmail.com" target="_blank">
+                    <span class="material-symbols-outlined text-sky-400 text-xl">mail</span>
+                    <span class="font-mono text-sm font-semibold text-slate-200 group-hover:text-sky-400 transition-colors">shakyaaryan.ai@gmail.com</span>
+                </a>
+                
+                <!-- Social Links (Only requested ones) -->
+                <div class="flex gap-4">
+                    <!-- GitHub -->
+                    <a class="p-3 bg-slate-900 border border-slate-800 rounded-full hover:text-sky-400 hover:border-sky-500/40 hover:scale-105 transition-all group" href="https://github.com/Aryan3133" target="_blank" aria-label="GitHub">
+                        <i class="devicon-github-original text-xl text-slate-400 group-hover:text-sky-400 transition-colors"></i>
+                    </a>
+                    
+                    <!-- LinkedIn -->
+                    <a class="p-3 bg-slate-900 border border-slate-800 rounded-full hover:text-sky-400 hover:border-sky-500/40 hover:scale-105 transition-all group" href="https://www.linkedin.com/in/aryan-shakya-088650255/" target="_blank" aria-label="LinkedIn">
+                        <i class="devicon-linkedin-plain text-xl text-slate-400 group-hover:text-sky-400 transition-colors"></i>
+                    </a>
+                    
+                    <!-- ResearchGate -->
+                    <a class="p-3 bg-slate-900 border border-slate-800 rounded-full hover:text-sky-400 hover:border-sky-500/40 hover:scale-105 transition-all group" href="https://www.researchgate.net/profile/Aaryan-Shakya?ev=hdr_xprf" target="_blank" aria-label="ResearchGate">
+                        <span class="material-symbols-outlined text-xl text-slate-400 group-hover:text-sky-400 transition-colors">school</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-8 px-6 border-t border-slate-900 bg-slate-950">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 max-w-6xl mx-auto text-xs font-mono text-slate-500">
+            <div class="flex items-center gap-2">
+                <span class="text-slate-300 font-bold">AARYAN SHAKYA</span>
+                <span>//</span>
+                <span>AI ENGINEER</span>
+            </div>
+            
+            <!-- Social Link List (Only explicit ones) -->
+            <div class="flex gap-6">
+                <a class="hover:text-sky-400 transition-colors" href="https://github.com/Aryan3133" target="_blank">GITHUB</a>
+                <a class="hover:text-sky-400 transition-colors" href="https://www.linkedin.com/in/aryan-shakya-088650255/" target="_blank">LINKEDIN</a>
+                <a class="hover:text-sky-400 transition-colors" href="https://www.researchgate.net/profile/Aaryan-Shakya?ev=hdr_xprf" target="_blank">RESEARCHGATE</a>
+            </div>
+            
+            <div class="opacity-60">© 2026 ALL RIGHTS RESERVED</div>
+        </div>
+    </footer>
+
+    <!-- Interactive script import -->
+    <script src="script.js"></script>
+</body>
+</html>
